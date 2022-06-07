@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Payment } from './payment/payment.entity';
 import { PaymentModule } from './payment/payment.module';
+import 'dotenv/config';
 
 @Module({
   imports: [
@@ -10,6 +11,9 @@ import { PaymentModule } from './payment/payment.module';
       url: process.env.DATABASE_URL,
       entities: [Payment],
       synchronize: true,
+      ssl: {
+        rejectUnauthorized: false,
+      },
     }),
     PaymentModule,
   ],

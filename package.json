@@ -32,11 +32,13 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "dotenv": "^16.0.1",
+    "nest-winston": "^1.6.2",
     "pg": "^8.7.3",
     "proto": "github:LAW-5/protobuf",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "winston": "^3.7.2"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",

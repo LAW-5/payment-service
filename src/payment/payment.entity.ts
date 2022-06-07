@@ -1,10 +1,13 @@
-import { BaseEntity, Column, Entity } from 'typeorm';
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Payment extends BaseEntity {
-  @Column({ type: 'int', primary: true })
+  @PrimaryGeneratedColumn()
   public id: number;
 
-  @Column({ type: 'int' })
+  @Column({ type: 'int', default: 0 })
   public balance: number;
+
+  @Column({ type: 'int' })
+  public userId: number;
 }

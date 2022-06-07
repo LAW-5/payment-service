@@ -14,6 +14,7 @@ export interface BalanceDetailResponse {
   status: number;
   error: string[];
   balance: number;
+  id: number;
 }
 
 export interface TopUpRequest {
