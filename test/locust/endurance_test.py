@@ -15,12 +15,12 @@ class CreateCli(HttpUser):
     token = None
 
     def on_start(self):
-        res = self.client.post("/auth/login", json=USER_CREDENTIAL, timeout=20)
+        res = self.client.post("/auth/login", json=USER_CREDENTIAL)
         self.token = res.json()["token"]
 
     @task()
     def get_all_product(self):
-        self.client.get("/payment", headers={"Authorization": f"Bearer {self.token}"}, timeout=20)
+        self.client.get("/payment", headers={"Authorization": f"Bearer {self.token}"})
 
 class StagesShape(LoadTestShape):
     stages = [
