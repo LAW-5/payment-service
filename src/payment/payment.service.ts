@@ -24,11 +24,12 @@ export class PaymentService {
   }: BalanceDetailDto): Promise<BalanceDetailResponse> {
     this.logger.log('info', `try checking balance for user with id: ${id}`);
     const payment: Payment = await this.repository.findOne({
-      where: { userId: id },
+      where: { id: id },
     });
 
     if (!payment) {
       const newPayment: Payment = new Payment();
+      newPayment.id = id;
       newPayment.userId = id;
       await this.repository.save(newPayment);
 
